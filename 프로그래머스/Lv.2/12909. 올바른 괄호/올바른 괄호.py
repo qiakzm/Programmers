@@ -1,7 +1,5 @@
 def solution(s):
     answer = True
-    s = list(s)
-    stack = []
     cnt = 0
     
     for i in s:
