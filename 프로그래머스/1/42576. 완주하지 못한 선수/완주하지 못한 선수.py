@@ -1,12 +1,18 @@
 def solution(participant, completion):
-    hashd = {}
+    #1. 헤시 딕셔너리, 해시 합 만들기
+    hashdict = {}
     sumhash = 0
     
+    #2. 참가자 해시값 합 구하기
     for part in participant:
-        hashd[hash(part)] = part
+        hashdict[hash(part)] = part
         sumhash += hash(part)
         
-    for com in completion:
-        sumhash -= hash(com)
+    #3. 완주자 해시값 빼기
+    for comp in completion:
+        sumhash -= hash(comp)
+        
     
-    return hashd[sumhash]
+        
+    #4. 남은 해시값의 주인이 답
+    return hashdict[sumhash]
