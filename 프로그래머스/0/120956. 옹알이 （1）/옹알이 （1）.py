@@ -1,9 +1,9 @@
 def solution(babbling):
-    answer = 0
-    for i in babbling:
-        for j in ['aya','ye','woo','ma']:
-            if j*2 not in i:
-                i=i.replace(j,' ')
-        if len(i.strip())==0:
-            answer +=1
-    return answer
+    can = ["aya", "ye", "woo", "ma"]
+    for k, i in enumerate(babbling):
+        for j in can:
+            if j*2 in i:
+                break
+            babbling[k]=babbling[k].replace(j, " ")
+        babbling[k]=babbling[k].replace(" ", "")
+    return babbling.count("")
